@@ -62,6 +62,17 @@ async function apagarBomba() {
     }
 }
 
+function obtenerComando() {
+
+  const props =
+    PropertiesService.getScriptProperties();
+
+  return ContentService
+    .createTextOutput(
+      props.getProperty("COMANDO")
+    );
+}
+
 obtenerDatos();
 
 // Actualizar cada 15 segundos
