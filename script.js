@@ -1,10 +1,34 @@
+const URL =
+"https://script.google.com/macros/s/TU_ID_DEL_SCRIPT/exec";
+
 async function obtenerDatos() {
 
-    document.getElementById("humedad").innerHTML = "84%";
-    document.getElementById("estado").innerHTML = "Humedo";
-    document.getElementById("bomba").innerHTML = "Apagada";
+    try {
+
+        const respuesta = await fetch(URL);
+        const datos = await respuesta.json();
+
+        document.getElementById("humedad").innerHTML =
+            datos.humedad + "%";
+
+        document.getElementById("estado").innerHTML =
+            datos.estado;
+
+        document.getElementById("bomba").innerHTML =
+            datos.bomba == 1
+                ? "🟢 Encendida"
+                : "🔴 Apagada";
+
+    } catch(error) {
+
+        console.error(error);
+
+        document.getElementById("estado").innerHTML =
+            "Error de conexión";
+    }
 }
 
 obtenerDatos();
 
-setInterval(obtenerDatos,15000);
+// Actualizar cada 15 segundos
+setInterval(obtenerDatos, 15000);
