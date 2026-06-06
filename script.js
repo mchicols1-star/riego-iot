@@ -1,5 +1,5 @@
 const URL =
-"https://script.google.com/macros/s/TU_ID_DEL_SCRIPT/exec";
+"https://script.google.com/macros/u/1/s/AKfycbwSQcmQk5pIw35LabdQmjZgJzQMaDzSZegQ52vkUCpkTlDxx-pJzjHKWOEkz4ycwzDfEQ/exec";
 
 async function obtenerDatos() {
 
