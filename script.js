@@ -1,27 +1,8 @@
-let chart;
+async function obtenerDatos() {
 
-function dibujarGrafica(labels,data){
-
-    if(chart){
-        chart.destroy();
-    }
-
-    const ctx =
-      document.getElementById('grafica');
-
-    chart = new Chart(ctx, {
-
-        type:'line',
-
-        data:{
-            labels:labels,
-
-            datasets:[{
-                label:'Humedad (%)',
-                data:data
-            }]
-        }
-    });
+    document.getElementById("humedad").innerHTML = "84%";
+    document.getElementById("estado").innerHTML = "Humedo";
+    document.getElementById("bomba").innerHTML = "Apagada";
 }
 
 obtenerDatos();
