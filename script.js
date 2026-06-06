@@ -1,3 +1,5 @@
+console.log("Script cargado");
+
 const URL =
 "https://script.google.com/macros/s/AKfycbwSQcmQk5pIw35LabdQmjZgJzQMaDzSZegQ52vkUCpkTlDxx-pJzjHKWOEkz4ycwzDfEQ/exec";
 
