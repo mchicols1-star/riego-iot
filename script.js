@@ -1,7 +1,7 @@
 console.log("Script cargado");
 
 const URL =
-"https://script.google.com/macros/s/AKfycbzDU0s7IwG3E_Br1Nk7mx8Zj33ps4682sAs4UCeGNnN8UJcboJdvMZm43kpjID8GIu1nA/exec";
+"https://script.google.com/macros/s/AKfycbxFjbGbkXZeMuZsOGx-0iKak9qGNvqaYaaADs8rild1EkCBSyEuoWouE-6aoj_5v6kciw/exec";
 
 async function obtenerDatos() {
 
