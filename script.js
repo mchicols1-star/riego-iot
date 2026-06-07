@@ -30,48 +30,6 @@ async function obtenerDatos() {
     }
 }
 
-async function encenderBomba() {
-
-    try {
-
-        await fetch(
-            URL + "?accion=encender"
-        );
-
-        alert("Comando enviado");
-
-    } catch(error) {
-
-        console.error(error);
-    }
-}
-
-async function apagarBomba() {
-
-    try {
-
-        await fetch(
-            URL + "?accion=apagar"
-        );
-
-        alert("Comando enviado");
-
-    } catch(error) {
-
-        console.error(error);
-    }
-}
-
-function obtenerComando() {
-
-  const props =
-    PropertiesService.getScriptProperties();
-
-  return ContentService
-    .createTextOutput(
-      props.getProperty("COMANDO")
-    );
-}
 
 obtenerDatos();
 
