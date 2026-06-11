@@ -12,7 +12,8 @@ body{
 }
 
 .card{
-    background-color: #E8F5E9; /* Verde muy claro */
+    background-color: #1B5E20; /* Verde oscuro */
+    color: white;
     padding: 20px;
     margin: 15px auto;
     width: 80%;
