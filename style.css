@@ -4,7 +4,12 @@ body{
     margin: 0;
     font-family: Arial, sans-serif;
 
-    background-image: url('images/fondo-riego.png');
+    background
+        linear-gradient(
+            rgba(0,0,0,0.5),
+            rgba(0,0,0,0.5)
+        ),
+    image: url('images/fondo-riego.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
