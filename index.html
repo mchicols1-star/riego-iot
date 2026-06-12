@@ -29,22 +29,7 @@
 
 
     
-    <div class="card">
-
-    <h2>Control de Bomba</h2>
-
-    <button class="btn-on"
-        onclick="controlBomba('ON')">
-        🚰 Encender
-    </button>
-
-    <button class="btn-off"
-        onclick="controlBomba('OFF')">
-        ⛔ Apagar
-    </button>
-
-</div>
-
+  
 
 
     
@@ -76,23 +61,7 @@
 
 
     
-    <script>
-
-function controlBomba(estado){
-
-    fetch(
-        "https://script.google.com/macros/s/AKfycbyE3aa3ZMz9z5rLawjQ5FXPWLffYI2-c8H79oNcSBNzK5iJlWLRoR0EXCDchnDwPgRGGw/exec?control=" + estado
-    )
-    .then(response => response.text())
-    .then(data => {
-
-        alert(data);
-
-    });
-
-}
-
-</script>
+   
 
 
     
