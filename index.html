@@ -1,50 +1,101 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>🌱 Sistema IoT de Riego</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>NVR Web 16 Cámaras</title>
+
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
+<style>
+body {
+    margin: 0;
+    background: #000;
+    font-family: Arial;
+}
+
+.header {
+    color: white;
+    text-align: center;
+    padding: 10px;
+    background: #111;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 4px;
+    height: calc(100vh - 40px);
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    background: black;
+}
+</style>
 </head>
 
 <body>
 
-    <h1>Sistema Inteligente de Riego</h1>
+<div class="header">🔴 NVR WEB - 16 CÁMARAS EN VIVO</div>
 
-    <div class="card">
-        <h2>Humedad Actual</h2>
-        <h1 id="humedad">0%</h1>
-    </div>
+<div class="grid">
+<video id="c1" autoplay muted></video>
+<video id="c2" autoplay muted></video>
+<video id="c3" autoplay muted></video>
+<video id="c4" autoplay muted></video>
 
-    <div class="card">
-        <h2>Estado</h2>
-        <h3 id="estado">Cargando...</h3>
-    </div>
+<video id="c5" autoplay muted></video>
+<video id="c6" autoplay muted></video>
+<video id="c7" autoplay muted></video>
+<video id="c8" autoplay muted></video>
 
-    <div class="card">
-        <h2>Bomba</h2>
-        <h3 id="bomba">Apagada</h3>
-    </div>
-    
-    <h2>Dashboard de Monitoreo</h2>
-  
-    <iframe
-        width="100%"
-        height="800"
-        src="https://datastudio.google.com/embed/reporting/f621a10d-f9c2-41d7-b72b-84a5aa0d2f2c/page/DCT0F"
-        frameborder="0"
-        style="border:0"
-        allowfullscreen>
-    </iframe>
+<video id="c9" autoplay muted></video>
+<video id="c10" autoplay muted></video>
+<video id="c11" autoplay muted></video>
+<video id="c12" autoplay muted></video>
 
-    <h2>Predicción Humedad</h2>
+<video id="c13" autoplay muted></video>
+<video id="c14" autoplay muted></video>
+<video id="c15" autoplay muted></video>
+<video id="c16" autoplay muted></video>
+</div>
 
-    <iframe 
-        width="450" 
-        height="260" 
-        style="border: 1px solid #cccccc;" 
-        src="https://thingspeak.com/channels/3399676/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Predicci%C3%B3n&type=line">
-    </iframe>
-      
-    <script src="script.js"></script>
+<script>
+const streams = [
+"http://localhost:8888/cam1/index.m3u8",
+"http://localhost:8888/cam2/index.m3u8",
+"http://localhost:8888/cam3/index.m3u8",
+"http://localhost:8888/cam4/index.m3u8",
+"http://localhost:8888/cam5/index.m3u8",
+"http://localhost:8888/cam6/index.m3u8",
+"http://localhost:8888/cam7/index.m3u8",
+"http://localhost:8888/cam8/index.m3u8",
+"http://localhost:8888/cam9/index.m3u8",
+"http://localhost:8888/cam10/index.m3u8",
+"http://localhost:8888/cam11/index.m3u8",
+"http://localhost:8888/cam12/index.m3u8",
+"http://localhost:8888/cam13/index.m3u8",
+"http://localhost:8888/cam14/index.m3u8",
+"http://localhost:8888/cam15/index.m3u8",
+"http://localhost:8888/cam16/index.m3u8"
+];
+
+function load(video, url){
+    if(Hls.isSupported()){
+        const hls = new Hls();
+        hls.loadSource(url);
+        hls.attachMedia(video);
+    } else {
+        video.src = url;
+    }
+}
+
+for(let i=0;i<16;i++){
+    load(document.getElementById("c"+(i+1)), streams[i]);
+}
+</script>
+
 </body>
 </html>
